@@ -1,0 +1,35 @@
+AlertRuleTemplateName : f71aba3d-28fb-450b-b192-4e76a83015c8
+DisplayName           : Test Advanced Multistage Attack Detection
+Description           : Using Fusion technology based on machine learning, Azure Sentinel automatically detects 
+                        multistage attacks by identifying combinations of anomalous behaviors and suspicious 
+                        activities observed at various stages of the kill chain. On the basis of these discoveries, 
+                        Azure Sentinel generates incidents that would otherwise be very difficult to catch. By design, 
+                        these incidents are low-volume, high-fidelity, and high-severity, which is why this detection 
+                        is turned ON by default.
+                        
+                        There are a total of 70 Fusion incident types detected by Azure Sentinel.
+                        - 65 of these show the combination of suspicious Azure Active Directory sign-in events 
+                        followed by anomalous Office 365 activity. Out of these 65, 30 are in public preview. 
+                        - The remaining five incident types show the combination of anomalous signals from Microsoft 
+                        Defender Advanced Threat Protection and from Palo Alto Networks firewalls. These five types 
+                        are all in public preview.
+                        
+                        To detect these multistage attacks, the following data connectors must be configured:
+                        - Azure Active Directory Identity Protection.
+                        - Microsoft Cloud App Security.
+                        - Microsoft Defender Advanced Threat Protection.
+                        - Palo Alto Networks.
+                        
+                        For a full list and description of each scenario that is supported for these multistage 
+                        attacks, go to https://aka.ms/SentinelFusion.
+Severity              : High
+Enabled               : False
+LastModifiedUtc       : 10/21/2020 4:33:53 PM
+Tactics               : {Collection, CommandAndControl, DefenseEvasion, Discovery...}
+Id                    : /subscriptions/c62cf585-7528-44dc-9ca7-8adcca36e875/resourceGroups/as-demo-rg/providers/Microso
+                        ft.OperationalInsights/workspaces/ldcasdemo/providers/Microsoft.SecurityInsights/alertRules/Bui
+                        ltInFusion
+Name                  : BuiltInFusion
+Type                  : Microsoft.SecurityInsights/alertRules
+Etag                  : "0000d348-0000-0c00-0000-5f9062f10000"
+Kind                  : Fusion
