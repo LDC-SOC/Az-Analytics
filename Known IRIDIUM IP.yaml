@@ -1,12 +1,10 @@
 AlertRuleTemplateName : 7ee72a9e-2e54-459c-bc8a-8c08a6532a63
 DisplayName           : Test Known IRIDIUM IP
-Description           : IRIDIUM command and control IP. Identifies a match across various data feeds for IP IOCs 
-                        related to the IRIDIUM activity group.
+Description           : IRIDIUM command and control IP. Identifies a match across various data feeds for IP IOCs related to the IRIDIUM activity group.
 Enabled               : False
 LastModifiedUtc       : 10/27/2020 2:52:32 PM
 Query                 : let timeframe = 1d;
-                        let IPList = dynamic(["154.223.45.38","185.141.207.140","185.234.73.19","216.245.210.106","51.9
-                        1.48.210","46.255.230.229"]);
+                        let IPList = dynamic(["154.223.45.38","185.141.207.140","185.234.73.19","216.245.210.106","51.91.48.210","46.255.230.229"]);
                         (union isfuzzy=true
                         (CommonSecurityLog
                         | where TimeGenerated >= ago(timeframe) 

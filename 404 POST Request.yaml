@@ -1,0 +1,28 @@
+AlertRuleTemplateName :
+DisplayName           : 404 POST Request
+Description           :
+Enabled               : True
+LastModifiedUtc       : 12/10/2020 3:29:26 PM
+Query                 : barracuda_CL
+                        | where HTTPStatus_s == "404"
+                        | where Method_s == "POST" and (URL_s !contains "shareidea" and URL_s !contains "SharingIdea")
+                        | summarize count() by ClientIP_s, URL_s, bin(TimeGenerated,10min), HostIP_s
+                        | where count_ >= 1
+                        | extend IPCustomEntity = ClientIP_s
+                        | extend URLCustomEntity = URL_s
+                        | extend HostCustomEntity = HostIP_s
+QueryFrequency        : 01:00:00
+QueryPeriod           : 01:00:00
+Severity              : Medium
+SuppressionDuration   : 05:00:00
+SuppressionEnabled    : False
+TriggerOperator       : GreaterThan
+TriggerThreshold      : 0
+Tactics               : {}
+Id                    : /subscriptions/13031751-3560-4a8f-94cf-c06d1831b472/resourceGroups/poe-oms-rg/providers/Microso
+                        ft.OperationalInsights/workspaces/poe-oms/providers/Microsoft.SecurityInsights/alertRules/09ede
+                        590-8452-4d6a-92f1-c7fd2fa0a195
+Name                  : 09ede590-8452-4d6a-92f1-c7fd2fa0a195
+Type                  : Microsoft.SecurityInsights/alertRules
+Etag                  : "c200d18c-0000-0c00-0000-5fd23ed60000"
+Kind                  : Scheduled
