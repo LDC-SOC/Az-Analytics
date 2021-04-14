@@ -19,9 +19,7 @@ SuppressionEnabled    : False
 TriggerOperator       : GreaterThan
 TriggerThreshold      : 0
 Tactics               : {}
-Id                    : /subscriptions/13031751-3560-4a8f-94cf-c06d1831b472/resourceGroups/poe-oms-rg/providers/Microso
-                        ft.OperationalInsights/workspaces/poe-oms/providers/Microsoft.SecurityInsights/alertRules/09ede
-                        590-8452-4d6a-92f1-c7fd2fa0a195
+
 Name                  : 09ede590-8452-4d6a-92f1-c7fd2fa0a195
 Type                  : Microsoft.SecurityInsights/alertRules
 Etag                  : "c200d18c-0000-0c00-0000-5fd23ed60000"
