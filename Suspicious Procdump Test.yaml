@@ -1,0 +1,19 @@
+AlertRuleTemplateName : 
+DisplayName           : Suspicious Procdump Test
+Description           : Test Test Test Detects suspicious uses of the SysInternals Procdump utility by using a special command line 
+                        parameter in combination with the lsass.exe process. This way we're also able to catch cases 
+                        in which the attacker has renamed the procdump executable.
+Enabled               : True
+LastModifiedUtc       : 11/10/2020 9:46:07 PM
+Query                 : SecurityEvent | where EventID == 4688  | where (((CommandLine contains ' -ma ') and 
+                        (CommandLine contains ' lsass')) or (CommandLine contains ' -ma ls'))
+QueryFrequency        : 00:05:00
+QueryPeriod           : 00:05:00
+Severity              : High
+SuppressionDuration   : 05:00:00
+SuppressionEnabled    : False
+TriggerOperator       : GreaterThan
+TriggerThreshold      : 0
+Tactics               : {DefenseEvasion, CredentialAccess}
+Type                  : Microsoft.SecurityInsights/alertRules
+Kind                  : Scheduled
